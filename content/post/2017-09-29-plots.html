@@ -1,0 +1,38 @@
+---
+title: Plots
+author: Madison
+date: '2017-09-29'
+slug: plots
+categories:
+  - Charts
+  - R
+tags:
+  - plot
+---
+
+
+
+<pre class="r"><code>library(ggplot2)</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.1</code></pre>
+<pre class="r"><code>library(Lahman)</code></pre>
+<pre><code>## Warning: package &#39;Lahman&#39; was built under R version 3.4.1</code></pre>
+<pre class="r"><code>library(sqldf)</code></pre>
+<pre><code>## Warning: package &#39;sqldf&#39; was built under R version 3.4.1</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Warning: package &#39;gsubfn&#39; was built under R version 3.4.1</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Warning: package &#39;proto&#39; was built under R version 3.4.1</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre><code>## Warning: package &#39;RSQLite&#39; was built under R version 3.4.1</code></pre>
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR,sum(SO) AS career_SO
+FROM Batting
+GROUP BY playerID
+HAVING sum(HR)&gt;=400&quot;
+
+result&lt;-sqldf(query)</code></pre>
+<pre class="r"><code>ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR),size=3,color=&quot;red&quot;)+
+  ggtitle(&quot;Career Strikeouts vs Homeruns for Great Hitters&quot;)+
+  xlab(&quot;Career Strikeouts&quot;)+
+  ylab(&quot;Career Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-09-29-plots_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>

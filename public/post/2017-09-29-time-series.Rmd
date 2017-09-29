@@ -1,0 +1,31 @@
+---
+title: Time Series
+author: Madison
+date: '2017-09-29'
+slug: time-series
+categories:
+  - Charts
+  - R
+tags:
+  - plot
+  - Time Series
+---
+```{r}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+
+query<-"SELECT yearID, HR
+FROM Batting
+WHERE playerID='ruthba01'"
+
+result<-sqldf(query)
+
+ggplot()+
+  geom_point(data=result,aes(x=yearID, y=HR))+
+  geom_line(data=result,aes(x=yearID, y=HR))+
+  ggtitle("Ruth's Homerun Totals Throughout the Year's")+
+  xlab("year")+
+  ylab("homeruns")
+```
+

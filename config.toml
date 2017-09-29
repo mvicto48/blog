@@ -1,37 +1,25 @@
 languageCode = "en-us"
 title = "Aerial"
-baseurl = "http://example.org/"
+baseurl = "https://mvicto48.netlify.com/"
 theme = "aerial"
 
 [params]
-  name = "Adam Jensen"
-  about = "Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this"
+  name = "Maddie's Blog"
+  about = "Quick R Tutorial"
   copyright = "Untitled"
   #Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
   bg_scroll = ""
   favicon = "favicon.ico"
 
-[[params.social]]
-  medium = "Twitter"
-  icon = "twitter"
-  link = "#"
+
+
 
 [[params.social]]
-  medium = "Facebook"
-  icon = "facebook"
-  link = "#"
-
-[[params.social]]
-  medium = "Dribbble"
-  icon = "dribbble"
-  link = "#"
-
-[[params.social]]
-  medium = "Github"
+  medium = "mvicto48"
   icon = "github"
   link = "#"
 
 [[params.social]]
-  medium = "Email"
+  medium = "mvicto48@lakers.mercyhurst.edu"
   icon = "envelope-o"
   link = "#"
